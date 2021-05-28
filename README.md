@@ -1,11 +1,11 @@
 # Celery Play
 We're gonna play with some celery stuff
 
-##Requirements
+## Requirements
 * docker
 * editor
 
 
-##How To Run
+## How To Run
 
     docker-compose up --build
