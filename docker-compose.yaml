@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  redis:
+    image: redis:latest
+    hostname: redis
+    ports:
+      - "6379:6379"
+  celery:
+    build:
+      dockerfile: celery.Dockerfile
+      context: .
+    depends_on:
+      - redis
+
+  tasker:
+    build:
+      dockerfile: flask.Dockerfile
+      context: .
+    depends_on:
+      - celery
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./tasker.sqlite:/app/celeryplay/tasker.sqlite

@@ -1,0 +1,7 @@
+requests~=2.25.1
+celery~=5.0.5
+Flask~=2.0.1
+redis~=3.5.3
+requests~=2.25
+
+click~=7.1.2
